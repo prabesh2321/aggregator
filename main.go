@@ -78,7 +78,7 @@ func getData(w http.ResponseWriter, req *http.Request) {
 		for r := range out {
 			sum = sum + r
 		}
-		wai <- struct{}{}
+		close(wai)
 	}()
 
 	//sending work to the channel
