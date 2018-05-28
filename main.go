@@ -34,7 +34,6 @@ func main() {
 func getData(w http.ResponseWriter, req *http.Request) {
 
 	decoder := json.NewDecoder(req.Body)
-	defer req.Body.Close()
 	var work []Work
 	err := decoder.Decode(&work)
 
